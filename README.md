@@ -1,15 +1,15 @@
-[![CircleCI](https://circleci.com/gh/giantswarm/template-operator.svg?&style=shield)](https://circleci.com/gh/giantswarm/template-operator) [![Docker Repository on Quay](https://quay.io/repository/giantswarm/template-operator/status "Docker Repository on Quay")](https://quay.io/repository/giantswarm/template-operator)
+[![CircleCI](https://circleci.com/gh/giantswarm/sudo-azure-operator.svg?&style=shield)](https://circleci.com/gh/giantswarm/sudo-azure-operator) [![Docker Repository on Quay](https://quay.io/repository/giantswarm/sudo-azure-operator/status "Docker Repository on Quay")](https://quay.io/repository/giantswarm/sudo-azure-operator)
 
-# template-operator
+# sudo-azure-operator
 
-This is a template repository containing files for a giantswarm
-operator repository.
+Idea: `sudo-azure-operator` manages Azure resources that require higher-level roles, so that permissions
+required by the `azure-operator` can be reduced to resource group level.
 
-To use it just hit `Use this template` button or [this
-link][generate].
+Goals:
+- Reduce level of permissions required by `azure-operator`
+- Enable alternative workflow of creating tenant clusters where `azure-operator` gets to use existing
+  Azure resources that require higher-level roles (e.g. resource groups that require subscription-level
+  permissions to be created)
 
-After creating your repository replace all instances of
-`template-operator` in this code base with your new repository name.
-Also rename `helm/template-operator` directory.
-
-[generate]: https://github.com/giantswarm/template-operator/generate
+Non-goals:
+- Change default user experience for creating tenant clusters on Microsoft Azure
