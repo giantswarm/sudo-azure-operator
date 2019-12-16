@@ -12,9 +12,9 @@ import (
 	"github.com/giantswarm/micrologger"
 	"github.com/spf13/viper"
 
-	"github.com/giantswarm/template-operator/pkg/project"
-	"github.com/giantswarm/template-operator/server/endpoint"
-	"github.com/giantswarm/template-operator/service"
+	"github.com/giantswarm/sudo-azure-operator/pkg/project"
+	"github.com/giantswarm/sudo-azure-operator/server/endpoint"
+	"github.com/giantswarm/sudo-azure-operator/service"
 )
 
 type Config struct {
