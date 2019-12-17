@@ -9,32 +9,32 @@ import (
 	"github.com/giantswarm/operatorkit/resource/wrapper/metricsresource"
 	"github.com/giantswarm/operatorkit/resource/wrapper/retryresource"
 
-	"github.com/giantswarm/sudo-azure-operator/service/controller/resource/test"
+	"github.com/giantswarm/sudo-azure-operator/service/controller/resource/resourcegroup"
 )
 
-type todoResourceSetConfig struct {
+type clusterResourceSetConfig struct {
 	K8sClient k8sclient.Interface
 	Logger    micrologger.Logger
 }
 
-func newTODOResourceSet(config todoResourceSetConfig) (*controller.ResourceSet, error) {
+func newClusterResourceSet(config clusterResourceSetConfig) (*controller.ResourceSet, error) {
 	var err error
 
-	var testResource resource.Interface
+	var resourceGroupResource resource.Interface
 	{
-		c := test.Config{
+		c := resourcegroup.Config{
 			K8sClient: config.K8sClient,
 			Logger:    config.Logger,
 		}
 
-		testResource, err = test.New(c)
+		resourceGroupResource, err = resourcegroup.New(c)
 		if err != nil {
 			return nil, microerror.Mask(err)
 		}
 	}
 
 	resources := []resource.Interface{
-		testResource,
+		resourceGroupResource,
 	}
 
 	{

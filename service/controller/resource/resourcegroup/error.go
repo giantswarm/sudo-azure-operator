@@ -1,4 +1,4 @@
-package test
+package resourcegroup
 
 import (
 	"github.com/giantswarm/microerror"

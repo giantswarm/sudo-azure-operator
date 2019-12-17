@@ -1,4 +1,4 @@
-package test
+package resourcegroup
 
 import (
 	"github.com/giantswarm/k8sclient"
@@ -7,7 +7,8 @@ import (
 )
 
 const (
-	Name = "todo"
+	Name = "resourcegroup"
+	managedBy = "sudo-azure-operator"
 )
 
 type Config struct {
@@ -31,6 +32,7 @@ func New(config Config) (*Resource, error) {
 	return r, nil
 }
 
+// Name returns the resource name.
 func (r *Resource) Name() string {
 	return Name
 }

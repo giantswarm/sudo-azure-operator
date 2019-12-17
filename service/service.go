@@ -33,7 +33,7 @@ type Service struct {
 	Version *version.Service
 
 	bootOnce          sync.Once
-	todoController    *controller.TODO
+	todoController    *controller.Cluster
 	operatorCollector *collector.Set
 }
 
@@ -89,15 +89,15 @@ func New(config Config) (*Service, error) {
 		}
 	}
 
-	var todoController *controller.TODO
+	var todoController *controller.Cluster
 	{
 
-		c := controller.TODOConfig{
+		c := controller.ClusterConfig{
 			K8sClient: k8sClient,
 			Logger:    config.Logger,
 		}
 
-		todoController, err = controller.NewTODO(c)
+		todoController, err = controller.NewCluster(c)
 		if err != nil {
 			return nil, microerror.Mask(err)
 		}
