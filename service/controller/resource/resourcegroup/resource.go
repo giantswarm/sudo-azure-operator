@@ -8,7 +8,6 @@ import (
 
 const (
 	Name = "resourcegroup"
-	managedBy = "sudo-azure-operator"
 )
 
 type Config struct {
