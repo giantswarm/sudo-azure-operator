@@ -43,7 +43,7 @@ func NewTodo(config TodoConfig) (*Todo, error) {
 	}
 	r := &Todo{
 		K8sClient: config.K8sClient,
-		Logger: config.Logger,
+		Logger:    config.Logger,
 	}
 
 	return r, nil

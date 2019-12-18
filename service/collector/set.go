@@ -34,7 +34,7 @@ func NewSet(config SetConfig) (*Set, error) {
 			Collectors: []collector.Interface{
 				todo,
 			},
-			Logger:     config.Logger,
+			Logger: config.Logger,
 		}
 
 		collectorSet, err = collector.NewSet(c)
