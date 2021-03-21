@@ -1,3 +1,6 @@
 apiVersion: v1
 name: sudo-azure-operator
 version: [[ .Version ]]
+appVersion: "[[ .AppVersion ]]"
+description: sudo-azure-operator manages Azure resources that require higher-level roles, so that permissions required by the azure-operator can be reduced to resource group level.
+home: https://github.com/giantswarm/sudo-azure-operator
